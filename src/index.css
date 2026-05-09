@@ -36,3 +36,8 @@
   --purple: hsl(300, 35%, 80%);
   --purple__alt: hsl(300, 30%, 75%);
 }
+
+* {
+  margin: 0;
+  padding: 0;
+}

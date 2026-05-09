@@ -1,38 +1,13 @@
-import { useState, useEffect } from 'react';
+import { Navigate, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
 import './App.css';
 
 function App() {
-  const [theme, setTheme] = useState('light');
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  const swapTheme = () => {
-    setTheme(theme => theme === 'light' ? 'dark' : 'light');
-  };
-
-  return(
-    <>
-      <title>Chrona | Home</title>
-
-      <div className='container'>
-        <div className='pink'></div>
-        <div className='red'></div>
-        <div className='orange'></div>
-        <div className='yellow'></div>
-        <div className='green'></div>
-        <div className='blue'></div>
-        <div className='purple'></div>
-      </div>
-
-      <p>Theme set to {theme} mode.</p>
-      <button
-        onClick={swapTheme}
-      >
-        Swap Theme
-      </button>
-    </>
+  return (
+    <Routes>
+      <Route path='/' element={<Navigate to='/home' />} />
+      <Route path='/home' element={<Home />} />
+    </Routes>
   );
 }
 
