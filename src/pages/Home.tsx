@@ -33,12 +33,21 @@ function Home() {
         </div>
 
         <p>Theme set to {theme} mode.</p>
-        <button
-          className='btn-swap-theme'
-          onClick={swapTheme}
-        >
-          Swap Theme
-        </button>
+        <div className='button-container'>
+          <button className='btn btn-pink'>Test Button</button>
+          <button className='btn btn-red'>Test Button</button>
+          <button className='btn btn-orange'>Test Button</button>
+          <button className='btn btn-yellow'>Test Button</button>
+          <button className='btn btn-green'>Test Button</button>
+          <button className='btn btn-blue'>Test Button</button>
+          <button className='btn btn-purple'>Test Button</button>
+          <button
+            className='btn btn-swap-theme'
+            onClick={swapTheme}
+          >
+            Swap Theme
+          </button>
+        </div>
 
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tortor massa, laoreet ut luctus ut, elementum at nulla. Donec mollis dignissim est sed luctus. Pellentesque tincidunt elementum metus a auctor. Suspendisse potenti. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eget arcu sed nisi cursus iaculis quis vel velit. Donec tortor nibh, sollicitudin a sem eu, congue sollicitudin ligula. Donec molestie, lacus et faucibus cursus, neque nisl feugiat sapien, at pulvinar arcu quam quis nisi. Nullam sed ornare libero. Pellentesque semper aliquam arcu vitae euismod. Vivamus vestibulum massa mi, ut dapibus neque rutrum at. Donec et ultrices sem. Nulla turpis mi, ultrices vitae elit placerat, porttitor tempor nunc.</p>
         <p>Integer eu risus vel libero sollicitudin pharetra id id urna. Suspendisse potenti. Fusce id ligula ante. Proin porttitor euismod ante, sit amet finibus massa tincidunt sit amet. Aenean sit amet dignissim lacus. In a odio nec massa mattis placerat. Nam tempor sodales tortor sit amet tempor. Nulla eu luctus felis. Praesent orci erat, gravida in elit eu, luctus vulputate mi. Suspendisse blandit convallis dapibus. Maecenas imperdiet est lacus, quis lacinia enim vehicula id.</p>
