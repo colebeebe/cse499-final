@@ -9,8 +9,8 @@ function App() {
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <Routes>
-        <Route path='/' element={<Navigate to='/home' />} />
-        <Route path='/home' element={<Home />} />
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </ThemeContext.Provider>
   );

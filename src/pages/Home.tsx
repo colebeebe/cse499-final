@@ -15,34 +15,34 @@ function Home() {
 
   return(
     <>
-      <div className='sidebar__global'>
-        <a href='#'>Home</a>
-        <a href='#'>About Us</a>
-        <a href='#'>Contact</a>
+      <div className="sidebar__global">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
       </div>
 
-      <div className='content'>
-        <div className='container'>
-          <div className='pink'></div>
-          <div className='red'></div>
-          <div className='orange'></div>
-          <div className='yellow'></div>
-          <div className='green'></div>
-          <div className='blue'></div>
-          <div className='purple'></div>
+      <div className="content">
+        <div className="container">
+          <div className="pink"></div>
+          <div className="red"></div>
+          <div className="orange"></div>
+          <div className="yellow"></div>
+          <div className="green"></div>
+          <div className="blue"></div>
+          <div className="purple"></div>
         </div>
 
         <p>Theme set to {theme} mode.</p>
-        <div className='button-container'>
-          <button className='btn btn-pink'>Test Button</button>
-          <button className='btn btn-red'>Test Button</button>
-          <button className='btn btn-orange'>Test Button</button>
-          <button className='btn btn-yellow'>Test Button</button>
-          <button className='btn btn-green'>Test Button</button>
-          <button className='btn btn-blue'>Test Button</button>
-          <button className='btn btn-purple'>Test Button</button>
+        <div className="button-container">
+          <button className="btn btn-pink">Test Button</button>
+          <button className="btn btn-red">Test Button</button>
+          <button className="btn btn-orange">Test Button</button>
+          <button className="btn btn-yellow">Test Button</button>
+          <button className="btn btn-green">Test Button</button>
+          <button className="btn btn-blue">Test Button</button>
+          <button className="btn btn-purple">Test Button</button>
           <button
-            className='btn btn-swap-theme'
+            className="btn btn-swap-theme"
             onClick={swapTheme}
           >
             Swap Theme
