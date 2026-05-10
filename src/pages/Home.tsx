@@ -16,9 +16,13 @@ function Home() {
   return(
     <>
       <div className="sidebar__global">
-        <a href="#">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
+        <nav>
+          <ul>
+            <li> <a href="#">Home</a> </li>
+            <li> <a href="#">About Us</a> </li>
+            <li> <a href="#">Contact</a> </li>
+          </ul>
+        </nav>
       </div>
 
       <div className="content">
