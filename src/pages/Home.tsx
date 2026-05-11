@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useThemeContext } from '../contexts/themeContext';
+import Calendar from '../components/Calendar';
 import './Home.css';
 
 function Home() {
@@ -14,7 +15,7 @@ function Home() {
   };
 
   return(
-    <>
+    <div className="home__page">
       <div className="sidebar__global">
         <nav>
           <ul>
@@ -25,68 +26,9 @@ function Home() {
         </nav>
       </div>
 
-      <table style={{marginLeft: "100px"}}>
-        <caption>May 2026</caption>
-        <thead>
-          <th>Sunday</th>
-          <th>Monday</th>
-          <th>Tuesday</th>
-          <th>Wednesday</th>
-          <th>Thursday</th>
-          <th>Friday</th>
-          <th>Saturday</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>1</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
-          </tr>
-          <tr>
-            <td style={{backgroundColor: "var(--green)", color: "var(--background)"}}>10</td>
-            <td>11</td>
-            <td>12</td>
-            <td>13</td>
-            <td>14</td>
-            <td>15</td>
-            <td>16</td>
-          </tr>
-          <tr>
-            <td>17</td>
-            <td>18</td>
-            <td>19</td>
-            <td>20</td>
-            <td>21</td>
-            <td>22</td>
-            <td>23</td>
-          </tr>
-          <tr>
-            <td>24</td>
-            <td>25</td>
-            <td>26</td>
-            <td>27</td>
-            <td>28</td>
-            <td>29</td>
-            <td>30</td>
-          </tr>
-          <tr>
-            <td>31</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className="calendar">
+        <Calendar />
+      </div>
 
       <div className="content">
         <div className="container">
@@ -137,7 +79,7 @@ function Home() {
         <p>Mauris ac consectetur libero, a tempor lectus. Nunc laoreet urna in metus laoreet, pulvinar suscipit tortor tristique. Nunc placerat libero mi, et commodo tortor viverra non. Phasellus porttitor sapien semper fermentum ornare. Phasellus hendrerit scelerisque ipsum nec euismod. Suspendisse vestibulum ipsum non eros aliquam, et suscipit purus efficitur. Vivamus sem enim, tempor non ullamcorper nec, congue vel augue. Nullam eget aliquet est. Nulla facilisi. Quisque a urna eu nisl elementum venenatis vel nec elit. Sed vitae leo non nulla bibendum laoreet eget vitae sem. Praesent ut vestibulum sem, eu condimentum orci. Praesent feugiat nisi et nisl tincidunt elementum. Pellentesque scelerisque porta commodo.</p>
         <p>Mauris tempor leo vel posuere faucibus. Vivamus molestie tristique egestas. Vestibulum diam elit, aliquet eget auctor ac, varius eget odio. Vestibulum varius sapien lorem, at elementum arcu tempus congue. Nulla posuere leo nec accumsan scelerisque. Sed laoreet est eget metus tincidunt fringilla non vel est. Sed at mauris eu dui bibendum venenatis. Maecenas id elit lorem.</p>
       </div>
-    </>
+    </div>
   );
 }
 

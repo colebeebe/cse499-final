@@ -29,12 +29,21 @@
   }
 }
 
-.content {
+.home__page {
   margin-left: 100px;
-  padding: 10px 20px;
-  p {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-align: justify;
+
+  .calendar {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .content {
+    padding: 10px 20px;
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
   }
 }

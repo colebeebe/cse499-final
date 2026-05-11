@@ -1,0 +1,22 @@
+.calendar__component {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+
+  caption {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  td {
+    border: 1px solid lightgray;
+  }
+
+  .day-cell {
+    aspect-ratio: 1 / 1;
+  }
+
+  .outside-month {
+    background-color: #e8e8e8;
+  }
+}
