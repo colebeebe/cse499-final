@@ -30,11 +30,7 @@ export function getCalendarData(date: Date) {
     }
 
     return {
-        today: {
-            year,
-            month,
-            day: date.getDate()
-        },
+        dataDate: new Date(year, month, date.getDate()),
         weekDays,
         weeks
     };

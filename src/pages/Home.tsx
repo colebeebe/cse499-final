@@ -58,7 +58,7 @@ function Home() {
             border: "none",
             backgroundColor: "lightgray",
             cursor: "pointer",
-            margin: "10px",
+            margin: "10px 5px",
           }}
           onClick={prevMonth}
         >
@@ -71,11 +71,21 @@ function Home() {
             width: "35px",
             border: "none",
             backgroundColor: "lightgray",
-            cursor: "pointer"
+            cursor: "pointer",
+            margin: "10px 5px"
           }}
           onClick={nextMonth}
         >
           &gt;
+        </button>
+        <button
+          style={{
+            margin: "10px 5px"
+          }}
+          className="btn"
+          onClick={() => setDate(new Date())}
+        >
+          Today
         </button>
       </div>
       <div className="calendar">

@@ -12,11 +12,23 @@
     border: 1px solid lightgray;
   }
 
+  .day-number {
+    padding: 3px;
+    border-radius: 3px;
+    margin: 2px;
+    position: absolute;
+  }
+
   .day-cell {
     aspect-ratio: 1 / 1;
   }
 
   .outside-month {
     background-color: #e8e8e8;
+  }
+
+  .today-date {
+    background-color: var(--green);
+    color: var(--background);
   }
 }
