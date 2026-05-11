@@ -1,14 +1,35 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useThemeContext } from '../contexts/themeContext';
 import Calendar from '../components/Calendar';
 import './Home.css';
 
 function Home() {
+  const [ date, setDate ] = useState(new Date());
   const { theme, setTheme } = useThemeContext();
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
+
+  const nextMonth = () => {
+    const month = date.getMonth();
+    const year = date.getFullYear();
+    if (month === 11) {
+      setDate(new Date(year + 1, 0, 1));
+      return;
+    }
+    setDate(new Date(year, month + 1, 1));
+  };
+
+  const prevMonth = () => {
+    const month = date.getMonth();
+    const year = date.getFullYear();
+    if (month === 0) {
+      setDate(new Date(year - 1, 11, 1));
+      return;
+    }
+    setDate(new Date(year, month - 1, 1));
+  };
 
   const swapTheme = () => {
     setTheme(theme => theme === 'light' ? 'dark' : 'light');
@@ -28,8 +49,37 @@ function Home() {
         </nav>
       </div>
 
+      <div className="temp-buttons">
+        <button 
+          style={{
+            borderRadius: "50%",
+            aspectRatio: "1 / 1",
+            width: "35px",
+            border: "none",
+            backgroundColor: "lightgray",
+            cursor: "pointer",
+            margin: "10px",
+          }}
+          onClick={prevMonth}
+        >
+          &lt;
+        </button>
+        <button 
+          style={{
+            borderRadius: "50%",
+            aspectRatio: "1 / 1",
+            width: "35px",
+            border: "none",
+            backgroundColor: "lightgray",
+            cursor: "pointer"
+          }}
+          onClick={nextMonth}
+        >
+          &gt;
+        </button>
+      </div>
       <div className="calendar">
-        <Calendar />
+        <Calendar date={date} />
       </div>
 
       <div className="content">

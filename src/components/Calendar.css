@@ -3,11 +3,9 @@
   border-collapse: collapse;
   width: 100%;
 
-  .month-header {
+  caption {
     font-weight: bold;
     font-size: 1.5rem;
-    display: flex;
-    justify-content: space-between;
   }
 
   td {
