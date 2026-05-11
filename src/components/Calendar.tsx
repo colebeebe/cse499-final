@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import './Calendar.css';
 
 function Calendar() {
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = today.getMonth();
+  const [date, setDate] = useState(new Date());
+  const year = date.getFullYear();
+  const month = date.getMonth();
 
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const offset = new Date(year, month, 1).getDay();
@@ -31,10 +32,35 @@ function Calendar() {
     weeks.push(calendarCells.slice(i, i + 7));
   }
 
+  const nextMonth = () => {
+    const month = date.getMonth();
+    const year = date.getFullYear();
+    if (month === 11) {
+      setDate(new Date(year + 1, 0, 1));
+      return;
+    }
+    setDate(new Date(year, month + 1, 1));
+  };
+
+  const prevMonth = () => {
+    const month = date.getMonth();
+    const year = date.getFullYear();
+    if (month === 0) {
+      setDate(new Date(year - 1, 11, 1));
+      return;
+    }
+    setDate(new Date(year, month - 1, 1));
+  };
+
+
   return (
     <table className="calendar__component">
       <caption>
-        {today.toLocaleString("default", { month: "long" })} {year}
+        <div className="month-header">
+          <button className="btn" onClick={prevMonth}>&lt;</button>
+          <span>{date.toLocaleString("default", { month: "long" })} {year}</span>
+          <button className="btn" onClick={nextMonth}>&gt;</button>
+        </div>
       </caption>
       <thead>
         {weekDays.map(day => <th key={day}>{day}</th>)}
