@@ -16,6 +16,8 @@ function Home() {
 
   return(
     <div className="home__page">
+      <title>Chrona | Home</title>
+
       <div className="sidebar__global">
         <nav>
           <ul>
