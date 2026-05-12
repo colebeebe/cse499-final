@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import GlobalSidebar from '../components/sidebars/GlobalSidebar';
-import MonthView from '../components/MonthView';
-import './Calendar.css'
+import MonthView from '../../components/MonthView';
+import './EventsSubpage.css';
 
-function Calendar() {
+function EventsSubpage() {
   const [ date, setDate ] = useState(new Date());
 
   const nextMonth = () => {
@@ -25,11 +24,11 @@ function Calendar() {
     }
     setDate(new Date(year, month - 1, 1));
   };
-  return (
-    <div className="calendar__page">
-      <title>Chrona | Calendar</title>
-      <GlobalSidebar />
 
+  return (
+    <div className="events__subpage">
+      <title>Chrona | Events</title>
+      <h1>Events</h1>
       <div className="calendar">
         <div className="temp-buttons">
           <button 
@@ -60,4 +59,4 @@ function Calendar() {
   );
 }
 
-export default Calendar;
+export default EventsSubpage;

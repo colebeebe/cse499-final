@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useThemeContext } from '../contexts/themeContext';
-import GlobalSidebar from '../components/sidebars/GlobalSidebar';
 import './Home.css';
 
 function Home() {
@@ -18,8 +17,6 @@ function Home() {
   return(
     <div className="home__page">
       <title>Chrona | Home</title>
-
-      <GlobalSidebar />
 
       <div className="content">
         <div className="container">
