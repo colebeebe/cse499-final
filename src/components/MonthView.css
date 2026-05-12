@@ -1,13 +1,11 @@
-[data-theme='dark'] {
-  .calendar__component {
-    td {
-      border: 1px solid hsl(0, 2%, 30%);
-    }
+:root {
+  --outside-month: var(--light-gray);
+  --cell-border: 1px solid var(--gray);
+}
 
-    .outside-month {
-      background-color: hsl(0, 3%, 20%);
-    }
-  }
+[data-theme='dark'] {
+  --outside-month: hsl(0, 3%, 20%);
+  --cell-border: 1px solid hsl(0, 2%, 30%);
 }
 
 .calendar__component {
@@ -26,7 +24,7 @@
   }
 
   td {
-    border: 1px solid var(--gray);
+    border: var(--cell-border);
   }
 
   .day-number {
@@ -41,7 +39,7 @@
   }
 
   .outside-month {
-    background-color: var(--light-gray);
+    background-color: var(--outside-month);
   }
 
   .today-date {

@@ -1,13 +1,11 @@
 :root {
-  --background__ls: white;
+  --background__ls: hsl(260, 18%, 98%);
   --background__ls__alt: hsl(260, 9%, 92%);
 }
 
 [data-theme="dark"] {
-  .sidebar__inner {
-    --background__ls: hsl(0, 3%, 18%);
-    --background__ls__alt: hsl(0, 3%, 30%);
-  }
+  --background__ls: hsl(0, 3%, 18%);
+  --background__ls__alt: hsl(0, 3%, 30%);
 }
 
 .sidebar__local {
