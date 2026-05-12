@@ -12,6 +12,7 @@ function GlobalSidebar() {
             <NavLink
               to='/home'
               className={({ isActive }) => isActive ? 'active-link' : ''}
+              aria-label='home'
             >
               <GoHome size={30} strokeWidth={0.3} />
             </NavLink>
@@ -20,6 +21,7 @@ function GlobalSidebar() {
             <NavLink
               to='/calendar'
               className={({ isActive }) => isActive ? 'active-link' : ''}
+              aria-label='calendar'
             >
               <CiCalendar size={30} strokeWidth={0.75} />
             </NavLink>
