@@ -1,18 +1,17 @@
 :root {
-  --background__is: white;
-  --background__is__alt: hsl(260, 9%, 92%);
+  --background__ls: white;
+  --background__ls__alt: hsl(260, 9%, 92%);
 }
 
 [data-theme="dark"] {
   .sidebar__inner {
-    --background__is: hsl(0, 3%, 18%);
-    --background__is__alt: hsl(0, 3%, 30%);
-    --active-link__is: hsl(0, 3%, 25%);
+    --background__ls: hsl(0, 3%, 18%);
+    --background__ls__alt: hsl(0, 3%, 30%);
   }
 }
 
-.sidebar__inner {
-  width: var(--inner-sidebar__width);
+.sidebar__local {
+  width: var(--local-sidebar__width);
   height: 100vh;
   position: fixed;
   z-index: 100;
@@ -21,21 +20,22 @@
   overflow: hidden;
   background-color: var(--background__gs);
 
-  .sidebar__inner__foreground {
+  .sidebar__local__foreground {
     height: 100%;
-    background-color: var(--background__is);
+    background-color: var(--background__ls);
     border-radius: 15px 0 0 15px;
   }
 
   ul {
     padding-top: 25px;
     padding-left: 10px;
+    list-style: none;
   }
 
   li {
     margin: 7px auto;
     &:hover {
-      background-color: var(--background__is__alt);
+      background-color: var(--background__ls__alt);
       border-radius: 9999px 0 0 9999px;
     }
   }

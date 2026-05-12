@@ -4,7 +4,7 @@
   --mono: 'Ubuntu Sans Mono', 'Courier New', Courier, monospace;
 
   --global-sidebar__width: 60px;
-  --inner-sidebar__width: 120px;
+  --local-sidebar__width: 120px;
 
   --background: hsl(260, 18%, 95%);
   --text-color: hsl(0, 5%, 15%);

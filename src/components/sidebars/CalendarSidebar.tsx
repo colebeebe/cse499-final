@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom';
-import './innerSidebar.css';
+import './localSidebar.css';
 
 function CalendarSidebar() {
   return (
-    <div className="sidebar__inner">
-      <div className="sidebar__inner__foreground">
+    <div className="sidebar__local">
+      <div className="sidebar__local__foreground">
         <ul>
           <li>
             <NavLink end to='/calendar' className={({ isActive }) => isActive ? 'active-link' : ''}>
