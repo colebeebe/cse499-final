@@ -1,13 +1,14 @@
 import { NavLink } from 'react-router-dom';
 import { GoHome } from 'react-icons/go';
 import { CiCalendar } from 'react-icons/ci';
+import { IoSettingsOutline } from 'react-icons/io5';
 import './GlobalSidebar.css';
 
 function GlobalSidebar() {
   return (
     <div className="sidebar__global">
       <nav>
-        <ul>
+        <ul className="global__top-links">
           <li>
             <NavLink
               to='/home'
@@ -24,6 +25,17 @@ function GlobalSidebar() {
               aria-label='calendar'
             >
               <CiCalendar size={30} strokeWidth={0.75} />
+            </NavLink>
+          </li>
+        </ul>
+        <ul className="global__bottom-links">
+          <li>
+            <NavLink
+              to='/settings'
+              className={({ isActive }) => isActive ? 'active-link' : ''}
+              aria-label='settings' 
+            >
+              <IoSettingsOutline size={30} />
             </NavLink>
           </li>
         </ul>

@@ -1,0 +1,4 @@
+.settings__page {
+  margin-left: var(--global-sidebar__width);
+  padding-left: 20px;
+}

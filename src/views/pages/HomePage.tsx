@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useThemeContext } from '../contexts/themeContext';
-import './Home.css';
+import './HomePage.css';
 
 function Home() {
   const { theme, setTheme } = useThemeContext();

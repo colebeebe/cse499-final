@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Navigate, Routes, Route } from 'react-router-dom';
 import GlobalSidebar from './components/sidebars/GlobalSidebar';
-import Home from './pages/Home';
+import Home from './pages/HomePage';
 import Calendar from './pages/Calendar/CalendarPage';
 import EventsSubpage from './pages/Calendar/EventsSubpage';
 import TodoSubpage from './pages/Calendar/TodoSubpage';
+import SettingsPage from './pages/Settings/SettingsPage';
 import { ThemeContext } from './contexts/themeContext';
 import './App.css';
 
@@ -21,6 +22,7 @@ function App() {
           <Route index element={<EventsSubpage />} />
           <Route path='todo' element={<TodoSubpage />} />
         </Route>
+        <Route path='/settings' element={<SettingsPage />} />
       </Routes>
     </ThemeContext.Provider>
   );
