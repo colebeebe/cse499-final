@@ -7,20 +7,14 @@ export function getCalendarData(date: Date) {
   const daysAfterMonth = 7 - ((offset + daysInMonth) % 7);
 
   // Fill the calendar with days
-  let calendarCells: (number | null)[] = [
+  let data: (number | null)[] = [
     ...Array(offset).fill(null),
     ...Array.from({ length: daysInMonth }, (_, i) => i + 1),
   ];
 
   // Add blank days at end of month if it's not a full week
   if (daysAfterMonth < 7) {
-    calendarCells = [...calendarCells, ...Array(daysAfterMonth).fill(null)];
-  }
-
-  // Format into weeks
-  const data: (number | null)[][] = [];
-  for (let i = 0; i < calendarCells.length; i += 7) {
-    data.push(calendarCells.slice(i, i + 7));
+    data = [...data, ...Array(daysAfterMonth).fill(null)];
   }
 
   return data;
