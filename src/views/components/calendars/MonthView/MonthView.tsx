@@ -1,21 +1,50 @@
 import { getCalendarData } from '../../../core/calendarData';
+import type { CalendarProps } from '../../../core/calendarTypes';
 import './MonthView.css';
-
-type CalendarProps = {
-  date: Date;
-  prevMonth: () => void;
-  nextMonth: () => void;
-};
 
 const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] as const;
 
-function MonthView({ date, prevMonth, nextMonth }: CalendarProps) {
+function MonthView({ date, setDate, setCurrentView }: CalendarProps) {
   const data = getCalendarData(date);
   const today = new Date();
 
+  const nextMonth = () => {
+    const month = date.getMonth();
+    const year = date.getFullYear();
+    if (month === 11) {
+      setDate(new Date(year + 1, 0, 1));
+      return;
+    }
+    setDate(new Date(year, month + 1, 1));
+  };
+
+  const prevMonth = () => {
+    const month = date.getMonth();
+    const year = date.getFullYear();
+    if (month === 0) {
+      setDate(new Date(year - 1, 11, 1));
+      return;
+    }
+    setDate(new Date(year, month - 1, 1));
+  };
+
   return (
-    <div className="calendar__component">
+    <div className="month-view__component">
       <div className="calendar-caption">
+        <div className="view-select-button__container">
+          <button
+            className="month-view-select btn"
+            onClick={() => setCurrentView('month')}
+          >
+            Month
+          </button>
+          <button
+            className="week-view-select btn"
+            onClick={() => setCurrentView('week')}
+          >
+            Week
+          </button>
+        </div>
         <h1>
           {date.toLocaleString('default', { month: 'long' })}{' '}
           {date.getFullYear()}
@@ -27,7 +56,9 @@ function MonthView({ date, prevMonth, nextMonth }: CalendarProps) {
           <button className="btn" onClick={nextMonth}>
             &rarr;
           </button>
-          <button className="btn">Today</button>
+          <button className="btn" onClick={() => setDate(new Date())}>
+            Today
+          </button>
         </div>
       </div>
       <div className="calendar-headers">
@@ -59,7 +90,7 @@ function MonthView({ date, prevMonth, nextMonth }: CalendarProps) {
                     style={{
                       position: 'absolute',
                       width:
-                        'calc((100vw - var(--global-sidebar__width) - var(--local-sidebar__width) - 32px) / 7 * 3 - 15px)',
+                        'calc((var(--calendar__subpage__width) - 32px) / 7 * 3 - 15px)',
                       height: '20px',
                       backgroundColor: 'var(--yellow)',
                       padding: '2px 5px',

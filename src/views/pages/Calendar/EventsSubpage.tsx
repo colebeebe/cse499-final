@@ -1,35 +1,31 @@
 import { useState } from 'react';
 import MonthView from '../../components/calendars/MonthView/MonthView';
+import WeekView from '../../components/calendars/WeekView/WeekView';
+import type { CalendarView } from '../../core/calendarTypes';
 import './EventsSubpage.css';
 
 function EventsSubpage() {
+  const [currentView, setCurrentView] = useState<CalendarView>('month');
   const [date, setDate] = useState(new Date());
 
-  const nextMonth = () => {
-    const month = date.getMonth();
-    const year = date.getFullYear();
-    if (month === 11) {
-      setDate(new Date(year + 1, 0, 1));
-      return;
-    }
-    setDate(new Date(year, month + 1, 1));
+  const viewComponents = {
+    year: MonthView,
+    month: MonthView,
+    week: WeekView,
+    day: MonthView,
   };
 
-  const prevMonth = () => {
-    const month = date.getMonth();
-    const year = date.getFullYear();
-    if (month === 0) {
-      setDate(new Date(year - 1, 11, 1));
-      return;
-    }
-    setDate(new Date(year, month - 1, 1));
-  };
+  const ActiveView = viewComponents[currentView];
 
   return (
     <div className="events__subpage">
       <title>Chrona | Events</title>
       <div className="calendar">
-        <MonthView date={date} prevMonth={prevMonth} nextMonth={nextMonth} />
+        <ActiveView
+          date={date}
+          setDate={setDate}
+          setCurrentView={setCurrentView}
+        />
       </div>
     </div>
   );

@@ -8,7 +8,7 @@
   --cell-border: 1px solid hsl(0, 2%, 30%);
 }
 
-.calendar__component {
+.month-view__component {
   padding: 10px;
   width: calc(var(--calendar__subpage__width) - 20px);
   height: calc(100vh - 20px);
